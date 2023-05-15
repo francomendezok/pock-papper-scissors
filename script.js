@@ -1,3 +1,29 @@
+function game () {
+    var playerScore = 0;
+    var cpuScore = 0;
+
+    while (playerScore <= 5 || cpuScore <= 5) {
+        // Add event listener when i select an image//
+        const playerSelection = algo;
+        const computerSelection = getComputerChoice()
+        let round = playRound(playerSelection, computerSelection);
+
+        if (round.includes("Win!")) playerScore++;
+        if (round.includes("Lose!")) cpuScore++;
+
+        console.log(round);
+        console.log("Score:" + playerScore + " - " + cpuScore);
+        if (playerScore === 5) {
+            console.log("You Wins");
+            return;
+        }
+        if (cpuScore === 5) {
+            console.log("AI wins");
+            return;
+        }
+    }
+
+}
 
 
 function getComputerChoice () {
@@ -21,16 +47,12 @@ function getComputerChoice () {
 
 // It gets two parameters and play one round, returns a string with the winner//
 
-const playerSelection = prompt("Rock, Papper or Scissors").toLowerCase();
-const computerSelection = getComputerChoice()
-
 function playRound (playerSelection, computerSelection) {
-
     // PLAYER //
     if (playerSelection === computerSelection) return "It's a Tie";
-    if (playerSelection === "rock" && computerSelection === "scissors") return "You win! Rock beats Scissors"; 
-    if (playerSelection === "papper" && computerSelection === "rock") return "You win! Papper beats Rock";   
-    if (playerSelection === "scissors" && computerSelection === "papper") return "You win! Scissors beats Papper";
+    if (playerSelection === "rock" && computerSelection === "scissors") return "You Win! Rock beats Scissors"; 
+    if (playerSelection === "papper" && computerSelection === "rock") return "You Win! Papper beats Rock";  
+    if (playerSelection === "scissors" && computerSelection === "papper") return "You Win! Scissors beats Papper";
 
     // CPU //
     if (computerSelection === "rock" && playerSelection === "scissors") return "You Lose! Rock beats Scissors";
@@ -38,21 +60,7 @@ function playRound (playerSelection, computerSelection) {
     if (computerSelection === "scissors" && playerSelection === "papper") return "You Lose! Scissors beats Papper";
 }
 
-console.log(playRound(playerSelection, computerSelection));
 
-//Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.//
+game();
 
-// score++//
-
-function game () {
-    let playerScore = 0;
-    let cpuScore = 0;
-
-    while (playerScore != 5 || cpuScore != 5) {
-        playRound();
-    }
-
-    if (playerScore === 5) return "You Wins";
-    if (cpuScore === 5) return "AI wins";
-}
 

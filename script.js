@@ -3,8 +3,10 @@ function game () {
     var cpuScore = 0;
 
     while (playerScore <= 5 || cpuScore <= 5) {
-        // Add event listener when i select an image//
-        const playerSelection = algo;
+        // Add event listener when I select an image//
+
+        const playerSelection = prompt("Rock, Papper or Scissors").toLowerCase();
+
         const computerSelection = getComputerChoice()
         let round = playRound(playerSelection, computerSelection);
 

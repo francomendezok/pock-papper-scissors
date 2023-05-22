@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
     <h1> Rock, Papper & Scissors</h1>
-    <p>Play and Check the Score in the Console!</p>
-    <div id="inputs">
-        <input type="text" placeholder="Rock, Papper or Scissors">
-        <input type="submit" value="Play">
+    <div class="score">
+        <p>Play and Check the Score!</p>
+        <p class="liveScore"></p>
+        <button class="glow-on-hover" id="playAgain">Play Again?</button>
     </div>
 
     <div class="images">
 
-        <div class="choose rock">
-            <img src="./images/the-rock-dwayne-johnson-7.jpg_1043314334.webp" alt="the rock">
+        <div>
+            <img class="option" id="rock" src="./images/the-rock-dwayne-johnson-7.jpg_1043314334.webp" alt="the rock">
             <figcaption>Rock</figcaption>
         </div>
-        <div class="choose papper">
-            <img src="./images/old-white-papper-black-background-old-white-papper-146132459.jpg" alt="papper">
+        <div>
+            <img class="option" id="papper" src="./images/old-white-papper-black-background-old-white-papper-146132459.jpg" alt="papper">
             <figcaption>Papper</figcaption>
         </div>
-        <div class="choose scissors">
-            <img src="./images/22-johnnydepp-manosdetijera-secuela-richtman-1024x533.jpg" alt="scissors">
+        <div>
+            <img class="option" id="scissors" src="./images/22-johnnydepp-manosdetijera-secuela-richtman-1024x533.jpg" alt="scissors">
             <figcaption>Scissors</figcaption>
         </div>
 
